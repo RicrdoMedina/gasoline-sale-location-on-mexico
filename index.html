@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Google Maps | Establecimientos</title>
+</head>
+<body>
+    <div class="wrapper">
+      <header class="header">
+        <form id="formSearch" class="form-search slideDown">
+          <div class="content-search">
+            <label for="search">Establecimientos de Gasolina</label>
+            <input type="text" name="search" id="search" class="input-search" value="">
+            <span class="icon-search">
+              <img class="flag-country" width="40" src="./src/images/mexico.png" alt="Mexico">
+              Mexico?
+            </span>
+          </div>
+        </form>
+      </header>
+      <section class="main">
+        <div class="container-map fadeIn">
+          <div id="map" class="map"></div>
+        </div>
+      </section>
+      <footer class="footer">
+        <p class="footer-text">Created by Ricardo Medina</p>
+      </footer>
+    </div>
+    <script>
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnFk2WQq7JyNS9EgtIC6H__L1_P5DGW8A&callback=initMap"
+    async defer></script>
+    <script src="http://localhost:8080/js/bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  </body>
+</html>
