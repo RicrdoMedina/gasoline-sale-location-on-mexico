@@ -17,12 +17,6 @@ module.exports = {
   module:{
     rules: [
       {
-        test: /\.(js)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [path.resolve(__dirname, './src')]
-      },
-      {
         test:/\.css$/,
         //Indicamos los loaders que se van a extraer
         use:['style-loader', 'css-loader','postcss-loader'] // Style loader agregara el css en el head

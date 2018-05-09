@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Google Maps | Establecimientos</title>
+  <title>Google Maps | Establecimientos de Gasolina en Mexico</title>
 </head>
 <body>
     <div class="wrapper">
       <header class="header">
-        <form id="formSearch" class="form-search slideDown">
-          <div class="content-search">
-            <label for="search">Establecimientos de Gasolina</label>
-            <input type="text" name="search" id="search" class="input-search" value="">
-            <span class="icon-search">
-              <img class="flag-country" width="40" src="./src/images/mexico.png" alt="Mexico">
-              Mexico?
-            </span>
+        <div class="container-header">
+          <div class="container-country slideRight">
+            <img class="flag-country" width="40" src="./src/images/mexico.png" alt="Mexico">
+            <h1 class="title-country">Mexico</h1>
           </div>
-        </form>
+          <form id="formSearch" class="form-search slideLeft">
+            <div class="content-search">
+              <label for="search">Establecimientos de Gasolina</label>
+              <input type="text" name="search" id="search" class="input-search" value="">
+              <span class="icon-search">
+                ?
+              </span>
+            </div>
+          </form>
+        </div>
       </header>
       <section class="main">
         <div class="container-map fadeIn">
@@ -32,15 +37,10 @@
     <script>
       function initMap() {
         // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
       }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnFk2WQq7JyNS9EgtIC6H__L1_P5DGW8A&callback=initMap"
-    async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnFk2WQq7JyNS9EgtIC6H__L1_P5DGW8A"></script>
     <script src="http://localhost:8080/js/bundle.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   </body>
