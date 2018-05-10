@@ -9,6 +9,8 @@ const api = new API
 
 window.addEventListener('load', () => {
   let boxLoader = document.getElementById('loader')
+  let heigtLoader = document.getElementById('map').offsetHeight
+  boxLoader.style.height = heigtLoader
   view.showData()
   setTimeout(() => {
     boxLoader.classList.remove('loader')

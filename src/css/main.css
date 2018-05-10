@@ -1,3 +1,6 @@
+@custom-media --mobile ( max-width: 500px );
+
+@custom-media --tablet ( max-width: 800px );
 html, body{
   height: 100vh;
   width: 100%;
@@ -21,11 +24,32 @@ html, body{
     background: #000;
     color: #fff;
     display: flex;
+
+    @media ( --mobile ) {
+      height: 20vh;
+      align-items: center;
+    }
   }
 
   & .main{
     grid-area: main;
     height: 70vh;
+
+    & .title-map{
+      margin: 1em auto 0;
+      padding: 0;
+      width: 80%;
+      text-align: center;
+
+      @media ( --tablet ) {
+        font-size: 16px;
+      }
+
+      @media ( --mobile ) {
+        margin: 0 auto;
+        font-size: 14px;
+      }
+    }
   }
 
   & footer{
@@ -52,6 +76,15 @@ html, body{
   align-items: center;
   justify-content: center;
   margin: auto;
+
+  @media ( --mobile ) {
+    margin: 2em auto 0;
+    font-size: 14px;
+  }
+
+  @media ( --tablet ) {
+    flex-direction: column;
+  }
 }
 .container-country{
   display: flex;
@@ -62,6 +95,10 @@ html, body{
   margin: auto;
   height: 80px;
   padding: 10px 0 0;
+
+  @media ( --mobile ) {
+    display: none;
+  }
 
   & .title-country{
     margin: 0;
@@ -81,11 +118,19 @@ html, body{
   justify-content: center;
   visibility: hidden;
 
+  @media ( --mobile ) {
+    width: 100%;
+  }
+
   & .content-search{
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
+
+    @media ( --mobile ) {
+      flex-direction: column;
+    }
 
     & *{
       margin: .2em;
@@ -105,6 +150,10 @@ html, body{
       color: #fff;
       font-size: 18px;
       padding-left: .2em;
+
+      @media ( --mobile ) {
+        width: 250px;
+      }
     }
 
     & .icon-search{
@@ -112,6 +161,10 @@ html, body{
       align-items: center;
       justify-content: center;
       font-size: 25px;
+
+      @media ( --mobile ) {
+        display: none;
+      }
     }
   }
 }
@@ -119,15 +172,15 @@ html, body{
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 2em 0;
+  padding: 1em 0 0;
   box-sizing: border-box;
   visibility: hidden;
   position: relative;
 
   & .map{
-    height: 100%;
+    height: 56vh;
     width: 80%;
     box-shadow: 0px 0px 5px #000000;
   }
@@ -137,13 +190,13 @@ html, body{
 .content-loader{
   position: absolute;
   background: rgba(0, 188, 212, .7490);
-  height: 405px;
+  height: 56vh;
   width: 80%;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  margin: auto;
+  margin: 1em auto 0;
   display: none;
   align-items: center;
   justify-content: center;
