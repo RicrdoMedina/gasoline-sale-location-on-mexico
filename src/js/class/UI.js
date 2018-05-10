@@ -1,4 +1,5 @@
 import API from './API'
+import flagMexico from '../../images/mexico.png'
 
 export default class Ui {
   constructor () {
@@ -12,6 +13,23 @@ export default class Ui {
       center: latLng,
       zoom: 5
     })
+    this.displayFlagCountry()
+  }
+
+  displayFlagCountry () {
+    let imgFlag = document.createElement('img')
+    let boxImgFlag = document.getElementById('boxFlag')
+    if (boxImgFlag.childElementCount === 0) {
+      imgFlag.src = flagMexico
+
+      imgFlag.className = 'flag-country'
+
+      imgFlag.alt = 'Mexico'
+
+      imgFlag.width = '40'
+
+      boxImgFlag.appendChild(imgFlag)
+    }
   }
 
   showData () {
@@ -79,7 +97,7 @@ export default class Ui {
 
   filterResult (res, search) {
     let results = res.filter(function (obj) {
-      let r = obj.calle.indexOf(search) !== -1
+      let r = obj.calle.toUpperCase().indexOf(search.toUpperCase()) !== -1
       // console.log(r)
       return r
     })

@@ -17,7 +17,7 @@ const config = (env, argv) => {
       new HtmlWebpackPlugin({
         filename: '../index.html',
         template: './templates/index.ejs',
-        title: 'Cotizador de criptomonedas',
+        title: 'Google Maps | Establecimientos de Gasolina en Mexico',
         minify: {
           collapseWhitespace: 'false'
         }
@@ -40,12 +40,6 @@ const config = (env, argv) => {
     module:{
       rules: [
         {
-          test: /\.(js)$/,
-          loader: 'eslint-loader',
-          enforce: 'pre',
-          include: [path.resolve(__dirname, './src')]
-        },
-        {
           test:/\.js$/,
           use:{
             loader: 'babel-loader',
@@ -61,7 +55,7 @@ const config = (env, argv) => {
               {
                 loader:'css-loader',
                 options: {
-                  minimize: false
+                  minimize: true
                 }
               },
               'postcss-loader'
