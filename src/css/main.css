@@ -124,6 +124,7 @@ html, body{
   padding: 2em 0;
   box-sizing: border-box;
   visibility: hidden;
+  position: relative;
 
   & .map{
     height: 100%;
@@ -134,10 +135,26 @@ html, body{
 }
 
 .content-loader{
-  position: fixed;
-  background: red;
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  background: rgba(0, 188, 212, .7490);
+  height: 405px;
+  width: 80%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  & img{
+    width: 50px;
+  }
+}
+
+.content-loader.loader{
+  display: flex;
 }
 
 .slideDown{

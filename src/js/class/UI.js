@@ -1,5 +1,6 @@
 import API from './API'
 import flagMexico from '../../images/mexico.png'
+import gifLoader from '../../images/loader.gif'
 
 export default class Ui {
   constructor () {
@@ -13,10 +14,11 @@ export default class Ui {
       center: latLng,
       zoom: 5
     })
-    this.displayFlagCountry()
+    this.addFlagCountry()
+    this.addGifLoader()
   }
 
-  displayFlagCountry () {
+  addFlagCountry () {
     let imgFlag = document.createElement('img')
     let boxImgFlag = document.getElementById('boxFlag')
     if (boxImgFlag.childElementCount === 0) {
@@ -29,6 +31,17 @@ export default class Ui {
       imgFlag.width = '40'
 
       boxImgFlag.appendChild(imgFlag)
+    }
+  }
+
+  addGifLoader () {
+    let imgLoader = document.createElement('img')
+    let boxImgLoader = document.getElementById('loader')
+
+    if (boxImgLoader.childElementCount === 0) {
+      imgLoader.src = gifLoader
+      imgLoader.alt = 'Loader..'
+      boxImgLoader.appendChild(imgLoader)
     }
   }
 
@@ -88,11 +101,15 @@ export default class Ui {
   }
 
   search (search) {
+    let boxLoader = document.getElementById('loader')
     this.api.getData()
               .then(data => {
                 const res = data.res.results
                 this.filterResult(res, search)
               })
+    setTimeout(() => {
+      boxLoader.classList.remove('loader')
+    }, 2000)
   }
 
   filterResult (res, search) {
