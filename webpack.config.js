@@ -19,7 +19,7 @@ const config = (env, argv) => {
         template: './templates/index.ejs',
         title: 'Google Maps | Establecimientos de Gasolina en Mexico',
         minify: {
-          collapseWhitespace: 'false'
+          collapseWhitespace: 'true'
         }
       })
     )

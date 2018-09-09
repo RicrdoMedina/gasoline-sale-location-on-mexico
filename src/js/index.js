@@ -2,8 +2,6 @@ import '../css/main.css'
 import API from './class/API'
 import UI from './class/UI'
 
-console.log('ready')
-
 const view = new UI
 const api = new API
 
@@ -19,9 +17,10 @@ window.addEventListener('load', () => {
 
 const search = document.getElementById('search')
 
-search.addEventListener('input', () => {
+search.addEventListener('input', (e) => {
   let boxLoader = document.getElementById('loader')
-  if (search.value.length > 3) {
+
+  if (search.value.length > 2) {
     boxLoader.classList.add('loader')
     view.search(search.value)
   } else if (search.value.length === 0) {
